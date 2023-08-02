@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Controls Example3</title>
+  <meta name="author" content="Showkath">
+  <meta name="author" content="Showkath" href="https://www.linkedin.com/in/showkath/">
+  <meta name="publisher" content="Showkath" email="iamshowkath@gmail.com">
+ 
+  <style>
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML Controls Example</h1>
+
+  <!-- ... Existing controls from the previous example ... -->
+
+  <!-- Datalist Input -->
+  <label for="city">Select a city:</label>
+  <input list="cities" id="city" placeholder="Enter or select a city">
+  <datalist id="cities">
+    <option value="New York"></option>
+    <option value="Los Angeles"></option>
+    <option value="Chicago"></option>
+    <option value="San Francisco"></option>
+    <option value="Seattle"></option>
+  </datalist>
+
+  <!-- Meter -->
+  <label for="storage">Storage Usage:</label>
+  <meter id="storage" value="70" min="0" max="100">70%</meter>
+
+  <!-- Progress -->
+  <label for="loading">Loading Progress:</label>
+  <progress id="loading" value="50" max="100"></progress>
+
+  <!-- Fieldset and Legend -->
+  <fieldset>
+    <legend>Choose your subscription plan:</legend>
+    <label>
+      <input type="radio" name="plan" value="basic"> Basic
+    </label>
+    <label>
+      <input type="radio" name="plan" value="pro"> Pro
+    </label>
+    <label>
+      <input type="radio" name="plan" value="premium"> Premium
+    </label>
+  </fieldset>
+
+  <!-- Details and Summary -->
+  <details>
+    <summary>More Info</summary>
+    <p>Additional information or details can be shown here.</p>
+  </details>
+
+  <!-- Output Element -->
+  <p>Total: <output id="totalOutput">0</output> USD</p>
+  <button onclick="calculateTotal()">Calculate Total</button>
+
+  <!-- Explanation -->
+  <h2>Explanation</h2>
+  <ul>
+    <!-- ... Existing explanations from the previous example ... -->
+    <li>Datalist Input: Provides a list of predefined options for an input element.</li>
+    <li>Meter: Represents a scalar measurement within a known range, often used to visualize progress.</li>
+    <li>Progress: Displays the progress of a task, such as loading a page or downloading a file.</li>
+    <li>Fieldset and Legend: Used to group related form elements together and provide a legend for the fieldset.</li>
+    <li>Details and Summary: Creates a disclosure widget, allowing users to reveal or hide additional content.</li>
+  </ul>
+
+  <script>
+    // ... Existing JavaScript code from the previous example ...
+
+    // JavaScript code for Meter
+    const storageMeter = document.getElementById("storage");
+    // Simulating dynamic data change
+    setInterval(() => {
+      storageMeter.value = Math.floor(Math.random() * 100);
+    }, 2000);
+
+    // JavaScript code for Progress
+    const progress = document.getElementById("loading");
+    let progressValue = 0;
+    // Simulating progress update
+    const interval = setInterval(() => {
+      progressValue += 10;
+      if (progressValue > 100) {
+        clearInterval(interval);
+      } else {
+        progress.value = progressValue;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

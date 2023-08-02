@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Controls Example4</title>
+  <meta name="author" content="Showkath">
+  <meta name="author" content="Showkath" href="https://www.linkedin.com/in/showkath/">
+  <meta name="publisher" content="Showkath" email="iamshowkath@gmail.com">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    form {
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      margin-bottom: 10px;
+      width: 250px;
+    }
+    button {
+      margin-top: 10px;
+    }
+    output {
+      font-weight: bold;
+    }
+    #cart {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    #cart li {
+      margin-bottom: 5px;
+    }
+    #cartLabel {
+      font-weight: bold;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .control {
+      margin-right: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML Controls Example</h1>
+
+  <div class="controls">
+    <!-- Shopping Cart -->
+    <div class="control">
+      <h2>Shopping Cart</h2>
+      <form onsubmit="return false;">
+        <label for="item1Quantity">Item 1 Quantity:</label>
+        <input type="number" id="item1Quantity" value="0" min="0">
+        <label for="item2Quantity">Item 2 Quantity:</label>
+        <input type="number" id="item2Quantity" value="0" min="0">
+        <label for="item3Quantity">Item 3 Quantity:</label>
+        <input type="number" id="item3Quantity" value="0" min="0">
+        <button onclick="addToCart('Item 1', 10)">Add Item 1</button>
+        <button onclick="addToCart('Item 2', 20)">Add Item 2</button>
+        <button onclick="addToCart('Item 3', 15)">Add Item 3</button>
+        <button onclick="clearCart()">Clear Cart</button>
+      </form>
+      <h3 id="cartLabel">Cart:</h3>
+      <ul id="cart"></ul>
+      <p>Total: <output id="total"></output> USD</p>
+    </div>
+
+    <!-- Output Element -->
+    <div class="control">
+      <h2>Output Element</h2>
+      <label for="item1Price">Item 1 Price:</label>
+      <input type="number" id="item1Price" value="10" min="0">
+      <label for="item2Price">Item 2 Price:</label>
+      <input type="number" id="item2Price" value="20" min="0">
+      <label for="item3Price">Item 3 Price:</label>
+      <input type="number" id="item3Price" value="15" min="0">
+      <button onclick="calculateTotal()">Calculate Total</button>
+      <p>Total: <output id="totalOutput">0</output> USD</p>
+    </div>
+
+    <!-- Week Input -->
+    <div class="control">
+      <h2>Week Input</h2>
+      <label for="week">Select a week:</label>
+      <input type="week" id="week">
+    </div>
+
+    <!-- Month Input -->
+    <div class="control">
+      <h2>Month Input</h2>
+      <label for="month">Select a month:</label>
+      <input type="month" id="month">
+    </div>
+
+    <!-- Range Input -->
+    <div class="control">
+      <h2>Range Input</h2>
+      <label for="price">Price (0 to 100 by 5):</label>
+      <input type="range" id="price" min="0" max="100" step="5">
+    </div>
+
+    <!-- Search Input -->
+    <div class="control">
+      <h2>Search Input</h2>
+      <label for="search">Search:</label>
+      <input type="search" id="search" placeholder="Search for keywords">
+    </div>
+
+    <!-- Color Input -->
+    <div class="control">
+      <h2>Color Input</h2>
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color">
+    </div>
+
+    <!-- Date Input -->
+    <div class="control">
+      <h2>Date Input</h2>
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate">
+    </div>
+
+    <!-- File Input -->
+    <div class="control">
+      <h2>File Input</h2>
+      <label for="avatar">Choose Avatar:</label>
+      <input type="file" id="avatar" accept="image/*">
+    </div>
+
+    <!-- Keygen -->
+    <div class="control">
+      <h2>Keygen</h2>
+      <label for="key">Your Public Key:</label>
+      <keygen name="key" id="key" keytype="rsa">
+    </div>
+
+    <!-- Time Input -->
+    <div class="control">
+      <h2>Time Input</h2>
+      <label for="meeting-time">Meeting time:</label>
+      <input type="time" id="meeting-time">
+    </div>
+
+    <!-- Datalist Input with Input -->
+    <div class="control">
+      <h2>Datalist Input</h2>
+      <label for="fruit">Select a fruit:</label>
+      <input list="fruits" id="fruit" placeholder="Enter or select a fruit">
+      <datalist id="fruits">
+        <option value="Apple"></option>
+        <option value="Banana"></option>
+        <option value="Orange"></option>
+        <option value="Grapes"></option>
+        <option value="Mango"></option>
+      </datalist>
+    </div>
+
+    <!-- Optgroup and Option with Disabled -->
+    <div class="control">
+      <h2>Optgroup and Option</h2>
+      <label for="city">Select a city:</label>
+      <select id="city">
+        <optgroup label="USA">
+          <option value="nyc">New York City</option>
+          <option value="la">Los Angeles</option>
+        </optgroup>
+        <optgroup label="Canada">
+          <option value="toronto">Toronto</option>
+          <option value="vancouver" disabled>Vancouver (Disabled)</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Details and Summary -->
+    <div class="control">
+      <h2>Details and Summary</h2>
+      <details>
+        <summary>More Info</summary>
+        <p>Additional information or details can be shown here.</p>
+      </details>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code for Shopping Cart
+    let cartItems = [];
+    let totalAmount = 0;
+
+    function addToCart(itemName, itemPrice) {
+      cartItems.push({ name: itemName, price: itemPrice });
+      totalAmount += itemPrice;
+      updateCart();
+    }
+
+    function clearCart() {
+      cartItems = [];
+      totalAmount = 0;
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById("cart");
+      const totalSpan = document.getElementById("total");
+      cartList.innerHTML = "";
+      cartItems.forEach(item => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${item.name} - $${item.price}`;
+        cartList.appendChild(listItem);
+      });
+      totalSpan.textContent = totalAmount;
+    }
+
+    // JavaScript code for Output Element
+    function calculateTotal() {
+      const item1Price = parseFloat(document.getElementById("item1Price").value);
+      const item2Price = parseFloat(document.getElementById("item2Price").value);
+      const item3Price = parseFloat(document.getElementById("item3Price").value);
+      const total = item1Price + item2Price + item3Price;
+      document.getElementById("totalOutput").textContent = total;
+    }
+  </script>
+
+  <!-- Explanation -->
+  <h2>Explanation</h2>
+  <ul>
+    <li>Shopping Cart: Simulates a shopping cart where users can add items, view the cart, and calculate the total amount.</li>
+    <li>Output Element: Calculates the total price based on input item prices and displays it using the output element.</li>
+    <li>Week Input: Allows users to select a week and year from a dropdown calendar.</li>
+    <li>Month Input: Allows users to select a month and year from a dropdown calendar.</li>
+    <li>Range Input: Allows users to select a value from a range with a defined step (increments).</li>
+    <li>Search Input: Used for search input fields with built-in styles and search-specific functionalities.</li>
+    <li>Color Input: Allows users to pick a color from the color palette.</li>
+    <li>Date Input: Enables users to select a date from a calendar popup.</li>
+    <li>File Input: Allows users to choose a file from their local device (e.g., an image for an avatar).</li>
+    <li>Keygen: Allows the generation of a key pair for use in forms, using the RSA algorithm.</li>
+    <li>Time Input: Represents a specific time.</li>
+    <li>Datalist Input with Input: Provides a list of fruits as predefined options for the input element.</li>
+    <li>Optgroup and Option with Disabled: Groups cities by country and disables the "Vancouver" option.</li>
+    <li>Details and Summary: The details element is initially open, and additional information can be shown by expanding the summary.</li>
+  </ul>
+
+</body>
+</html>

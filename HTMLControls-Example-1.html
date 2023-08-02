@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Controls Example 1</title>
+  <meta name="author" content="Showkath">
+  <meta name="author" content="Showkath" href="https://www.linkedin.com/in/showkath/">
+  <meta name="publisher" content="Showkath" email="iamshowkath@gmail.com">
+ 
+</head>
+<body>
+  <h1>HTML Controls Example</h1>
+
+  <!-- Text Input -->
+  <label for="name">Name:</label>
+  <input type="text" id="name" placeholder="Enter your name">
+
+  <!-- Password Input -->
+  <label for="password">Password:</label>
+  <input type="password" id="password" placeholder="Enter your password">
+
+  <!-- Email Input -->
+  <label for="email">Email:</label>
+  <input type="email" id="email" placeholder="Enter your email">
+
+  <!-- Number Input -->
+  <label for="age">Age:</label>
+  <input type="number" id="age" min="18" max="100">
+
+  <!-- Radio Buttons -->
+  <p>Select your gender:</p>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label>
+
+  <!-- Checkbox -->
+  <p>Select your interests:</p>
+  <input type="checkbox" id="interest1" name="interest" value="music">
+  <label for="interest1">Music</label>
+  <input type="checkbox" id="interest2" name="interest" value="sports">
+  <label for="interest2">Sports</label>
+  <input type="checkbox" id="interest3" name="interest" value="books">
+  <label for="interest3">Books</label>
+
+  <!-- Dropdown Select -->
+  <p>Select your country:</p>
+  <select id="country">
+    <option value="usa">United States</option>
+    <option value="canada">Canada</option>
+    <option value="uk">United Kingdom</option>
+    <option value="germany">Germany</option>
+    <option value="japan">Japan</option>
+  </select>
+
+  <!-- Textarea -->
+  <p>Enter your comments:</p>
+  <textarea id="comments" rows="4" cols="30" placeholder="Enter your comments here"></textarea>
+
+  <!-- Submit Button -->
+  <button type="submit">Submit</button>
+
+  <!-- Reset Button -->
+  <button type="reset">Reset</button>
+
+  <!-- Anchor Link -->
+  <a href="https://www.example.com" target="_blank">Visit Example Website</a>
+
+  <!-- Image -->
+  <img src="example.jpg" alt="Example Image" width="200" height="150">
+
+  <!-- Range Input -->
+  <label for="volume">Volume:</label>
+  <input type="range" id="volume" min="0" max="100">
+
+  <!-- Color Input -->
+  <label for="color">Favorite Color:</label>
+  <input type="color" id="color">
+
+  <!-- Date Input -->
+  <label for="birthdate">Birthdate:</label>
+  <input type="date" id="birthdate">
+
+  <!-- Time Input -->
+  <label for="meeting-time">Meeting time:</label>
+  <input type="time" id="meeting-time">
+
+  <!-- File Input -->
+  <label for="avatar">Choose Avatar:</label>
+  <input type="file" id="avatar" accept="image/*">
+
+  <!-- Range Output -->
+  <p>Selected value: <span id="volumeValue">50</span></p>
+  <output for="volume" id="volumeOutput">50</output>
+
+  <!-- Explanation -->
+  <h2>Explanation</h2>
+  <ul>
+    <li>Text Input: Used for user input, such as names or text data.</li>
+    <li>Password Input: Conceals the entered text, commonly used for password input.</li>
+    <li>Email Input: Allows users to enter email addresses, with built-in validation for email format.</li>
+    <li>Number Input: Accepts numeric values, with optional minimum and maximum range.</li>
+    <li>Radio Buttons: Allows users to select a single option from multiple choices (e.g., gender selection).</li>
+    <li>Checkbox: Allows users to select multiple options (e.g., interests) from a list.</li>
+    <li>Dropdown Select: Presents a list of options, and users can select one from the dropdown.</li>
+    <li>Textarea: Allows users to input multi-line text, useful for comments or longer messages.</li>
+    <li>Submit Button: Submits form data to a server for processing or performs a specific action.</li>
+    <li>Reset Button: Resets form fields to their default values.</li>
+    <li>Anchor Link: Creates a hyperlink to navigate to another webpage or resource.</li>
+    <li>Image: Displays an image on the page, with options to set width and height.</li>
+    <li>Range Input: Allows users to select a value from a range (e.g., volume control).</li>
+    <li>Color Input: Allows users to pick a color from the color palette.</li>
+    <li>Date Input: Enables users to select a date from a calendar popup.</li>
+    <li>Time Input: Allows users to select a time (hour and minutes) using a time picker.</li>
+    <li>File Input: Allows users to choose a file from their local device (e.g., an image for an avatar).</li>
+  </ul>
+
+  <script>
+    // JavaScript code for Range Output
+    const volumeInput = document.getElementById("volume");
+    const volumeOutput = document.getElementById("volumeOutput");
+    volumeInput.addEventListener("input", function() {
+      volumeOutput.value = volumeInput.value;
+      document.getElementById("volumeValue").textContent = volumeInput.value;
+    });
+  </script>
+</body>
+</html>

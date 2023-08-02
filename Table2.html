@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table Basic Examples</title>
+  <meta name="author" content="Showkath">
+  <meta name="author" content="Showkath" href="https://www.linkedin.com/in/showkath/">
+  <meta name="publisher" content="Showkath" email="iamshowkath@gmail.com">
+  <style>
+    /* Table Styles */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Table Basic Examples</h1>
+
+  <!-- Example 1: Simple Table -->
+  <h2>Example 1: Simple Table</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>John Doe</td>
+      <td>30</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>Jane Smith</td>
+      <td>25</td>
+      <td>Canada</td>
+    </tr>
+  </table>
+  <p>This is a simple table with three columns: Name, Age, and Country.</p>
+  <p>Each row represents a person with their respective information.</p>
+
+  <!-- Example 2: Table with Rowspan -->
+  <h2>Example 2: Table with Rowspan</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td rowspan="2">John Doe</td>
+      <td>30</td>
+      <td rowspan="2">USA</td>
+    </tr>
+    <tr>
+      <td>25</td>
+    </tr>
+  </table>
+  <p>This table includes a rowspan attribute to merge cells in a row.</p>
+  <p>John Doe's name and country appear in two rows to indicate shared information.</p>
+
+  <!-- Example 3: Table with Colspan -->
+  <h2>Example 3: Table with Colspan</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th colspan="2">Address</th>
+    </tr>
+    <tr>
+      <td>John Doe</td>
+      <td>123 Main St</td>
+      <td>New York</td>
+    </tr>
+  </table>
+  <p>This table uses the colspan attribute to merge cells in a column.</p>
+  <p>The Address column spans two cells to include both the street address and city.</p>
+
+  <!-- Additional Example: Table with Header and Data Rows -->
+  <h2>Additional Example: Table with Header and Data Rows</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Showkath</td>
+      <td>30</td>
+      <td>India</td>
+    </tr>
+    <tr>
+      <td>Emily Parker</td>
+      <td>32</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Chris Lee</td>
+      <td>22</td>
+      <td>Canada</td>
+    </tr>
+  </table>
+  <p>This table displays additional data with a header row and multiple data rows.</p>
+  <p>It follows the same structure as the previous examples, with different data.</p>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Controls Example2</title>
+  <meta name="author" content="Showkath">
+  <meta name="author" content="Showkath" href="https://www.linkedin.com/in/showkath/">
+  <meta name="publisher" content="Showkath" email="iamshowkath@gmail.com">
+ 
+  <style>
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML Controls Example</h1>
+
+  <!-- Text Input -->
+  <label for="name">Name:</label>
+  <input type="text" id="name" placeholder="Enter your name">
+
+  <!-- Password Input -->
+  <label for="password">Password:</label>
+  <input type="password" id="password" placeholder="Enter your password">
+
+  <!-- Email Input -->
+  <label for="email">Email:</label>
+  <input type="email" id="email" placeholder="Enter your email">
+
+  <!-- Number Input -->
+  <label for="age">Age:</label>
+  <input type="number" id="age" min="18" max="100">
+
+  <!-- Radio Buttons -->
+  <label>Select your gender:</label>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label>
+
+  <!-- Checkbox -->
+  <label>Select your interests:</label>
+  <input type="checkbox" id="interest1" name="interest" value="music">
+  <label for="interest1">Music</label>
+  <input type="checkbox" id="interest2" name="interest" value="sports">
+  <label for="interest2">Sports</label>
+  <input type="checkbox" id="interest3" name="interest" value="books">
+  <label for="interest3">Books</label>
+
+  <!-- Dropdown Select -->
+  <label for="country">Select your country:</label>
+  <select id="country">
+    <option value="usa">United States</option>
+    <option value="canada">Canada</option>
+    <option value="uk">United Kingdom</option>
+    <option value="germany">Germany</option>
+    <option value="japan">Japan</option>
+  </select>
+
+  <!-- Textarea -->
+  <label for="comments">Enter your comments:</label>
+  <textarea id="comments" rows="4" cols="30" placeholder="Enter your comments here"></textarea>
+
+  <!-- Submit and Reset Buttons -->
+  <div>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+
+  <!-- Anchor Link -->
+  <p><a href="https://www.example.com" target="_blank">Visit Example Website</a></p>
+
+  <!-- Image -->
+  <img src="example.jpg" alt="Example Image" width="200" height="150">
+
+  <!-- Shopping Cart -->
+  <h2>Shopping Cart</h2>
+  <ul id="cart">
+    <!-- Cart items will be added here dynamically -->
+  </ul>
+  <p>Total: <span id="total">0</span> USD</p>
+  <button onclick="addToCart('Item 1', 10)">Add Item 1 to Cart</button>
+  <button onclick="addToCart('Item 2', 20)">Add Item 2 to Cart</button>
+  <button onclick="addToCart('Item 3', 15)">Add Item 3 to Cart</button>
+  <button onclick="clearCart()">Clear Cart</button>
+
+  <!-- Range Input -->
+  <label for="volume">Volume:</label>
+  <input type="range" id="volume" min="0" max="100">
+
+  <!-- Color Input -->
+  <label for="color">Favorite Color:</label>
+  <input type="color" id="color">
+
+  <!-- Date Input -->
+  <label for="birthdate">Birthdate:</label>
+  <input type="date" id="birthdate">
+
+  <!-- Time Input -->
+  <label for="meeting-time">Meeting time:</label>
+  <input type="time" id="meeting-time">
+
+  <!-- File Input -->
+  <label for="avatar">Choose Avatar:</label>
+  <input type="file" id="avatar" accept="image/*">
+
+  <!-- Search Input -->
+  <label for="search">Search:</label>
+  <input type="search" id="search" placeholder="Search for keywords">
+
+  <!-- Output Element -->
+  <p>Total: <output id="totalOutput">0</output> USD</p>
+  <button onclick="calculateTotal()">Calculate Total</button>
+
+  <!-- Week Input -->
+  <label for="week">Select a week:</label>
+  <input type="week" id="week">
+
+  <!-- Month Input -->
+  <label for="month">Select a month:</label>
+  <input type="month" id="month">
+
+  <!-- Explanation -->
+  <h2>Explanation</h2>
+  <ul>
+    <li>Text Input: Used for user input, such as names or text data.</li>
+    <li>Password Input: Conceals the entered text, commonly used for password input.</li>
+    <li>Email Input: Allows users to enter email addresses, with built-in validation for email format.</li>
+    <li>Number Input: Accepts numeric values, with optional minimum and maximum range.</li>
+    <li>Radio Buttons: Allows users to select a single option from multiple choices (e.g., gender selection).</li>
+    <li>Checkbox: Allows users to select multiple options (e.g., interests) from a list.</li>
+    <li>Dropdown Select: Presents a list of options, and users can select one from the dropdown.</li>
+    <li>Textarea: Allows users to input multi-line text, useful for comments or longer messages.</li>
+    <li>Submit Button: Submits form data to a server for processing or performs a specific action.</li>
+    <li>Reset Button: Resets form fields to their default values.</li>
+    <li>Anchor Link: Creates a hyperlink to navigate to another webpage or resource.</li>
+    <li>Image: Displays an image on the page, with options to set width and height.</li>
+    <li>Shopping Cart: A simple demo of a shopping cart using checkboxes and buttons.</li>
+    <li>Range Input: Allows users to select a value from a range (e.g., volume control).</li>
+    <li>Color Input: Allows users to pick a color from the color palette.</li>
+    <li>Date Input: Enables users to select a date from a calendar popup.</li>
+    <li>Time Input: Allows users to select a time (hour and minutes) using a time picker.</li>
+    <li>File Input: Allows users to choose a file from their local device (e.g., an image for an avatar).</li>
+    <li>Search Input: Used for search input fields with built-in styles and search-specific functionalities.</li>
+    <li>Output Element: Used to display dynamic output based on JavaScript calculations (e.g., calculating the total price).</li>
+    <li>Week Input: Allows users to select a week and year from a dropdown calendar.</li>
+    <li>Month Input: Allows users to select a month and year from a dropdown calendar.</li>
+  </ul>
+
+  <script>
+    // JavaScript code for Shopping Cart
+    let cartItems = [];
+    let totalAmount = 0;
+
+    function addToCart(itemName, itemPrice) {
+      cartItems.push({ name: itemName, price: itemPrice });
+      totalAmount += itemPrice;
+      updateCart();
+    }
+
+    function clearCart() {
+      cartItems = [];
+      totalAmount = 0;
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById("cart");
+      const totalSpan = document.getElementById("total");
+      cartList.innerHTML = "";
+      cartItems.forEach(item => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${item.name} - $${item.price}`;
+        cartList.appendChild(listItem);
+      });
+      totalSpan.textContent = totalAmount;
+    }
+
+    // JavaScript code for Output Element
+    function calculateTotal() {
+      const item1Price = 10;
+      const item2Price = 20;
+      const item3Price = 15;
+      const item1Quantity = document.getElementById("item1Quantity").value;
+      const item2Quantity = document.getElementById("item2Quantity").value;
+      const item3Quantity = document.getElementById("item3Quantity").value;
+      const total = item1Price * item1Quantity + item2Price * item2Quantity + item3Price * item3Quantity;
+      document.getElementById("totalOutput").textContent = total;
+    }
+  </script>
+</body>
+</html>
